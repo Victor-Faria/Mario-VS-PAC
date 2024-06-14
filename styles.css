@@ -1,0 +1,149 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+body{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    flex-direction: column;
+    background: linear-gradient(to right,
+    rgb(1, 182, 228),
+    rgb(4, 45, 226));
+    
+}
+
+.game{
+    width: 500px;
+    height: 220px;
+    border: 1px solid black;
+    background: url(./images/background2.jpg);
+    background-position: bottom;
+    background-size: cover;
+    overflow: hidden;
+    box-shadow: 5px 5px 20px ;
+    border-radius: 10px;
+    position: relative;
+}
+.title{
+    width: 800px;
+    height: 200px;
+}
+
+.character{
+    width: 20px;
+    height: 50px;
+    position: absolute;
+    bottom: 40px;
+    left: 0px;
+    
+    
+    
+}
+.character img{
+    height: 80px;
+    width: 70px;
+}
+.animate{
+    animation: jump 500ms ease-out;
+}
+
+.monster{
+    width: 50px;
+    height: 50px;
+    position: absolute;
+    bottom: 20px;
+    right: -20px;
+}
+.monster.animate{
+    animation: monster 2.5s infinite linear;
+}
+.monster img{
+    height:50px;
+    width: 50px;
+    
+}
+.peach{
+    width: 20px;
+    height: 40px;
+    position: absolute;
+    right: 0;
+    bottom: 28px;
+    
+}
+.peach img{
+    width: 20px;
+    height: 40px;
+}
+.bowser {
+    position: absolute;
+    width: 40px;
+    height: 40px;
+    top: 100%; /* Start position at the bottom */
+    left: 54.5%;
+    animation: bowserAnimation 2s forwards; /* Animation name, duration, and forwards to keep the final state */
+}
+
+.bowser img {
+    width: 30px;
+    height: 30px;
+}
+
+
+
+.coin{
+    width: 20px;
+    height: 20px;
+    position: absolute;
+    bottom: 80px;
+    left: 37%;
+}
+
+.coin img{
+    width: 20px;
+    height: 20px;
+}
+#display{
+    opacity: 0;
+    pointer-events: none;
+}
+#dialog{
+    background-color: rgb(1, 182, 228);
+    font-size: 2rem;
+    text-align: center;
+}
+
+#restart-btn{
+    margin: 30px;
+    width: 100px;
+    height: 50px;
+    background-color: white;
+    border-radius: 25px;
+    box-shadow: -2px 1px 0 #222, -2px 1px 0 black;
+    letter-spacing: 2px;
+}
+#restart-btn:hover{
+    background-color: rgb(1, 182, 228);
+}
+#restart-btn:active{
+    box-shadow: inset -2px 1px 0 #222;
+    font-size: 0.9rem;
+}
+@keyframes monster{
+    0%{right: -20px;}
+    100%{right: 500px;}
+}
+@keyframes jump{
+    0%{bottom: 40px;}
+    
+    50%{bottom: 100px;}
+    
+    100%{bottom: 40px;}
+}
+@keyframes bowserAnimation {
+    0% { top: 65%;
+    opacity: 0; } 
+    100% { top: 60.8%;
+    opacity: 1; }
+}
